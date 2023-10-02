@@ -32,4 +32,19 @@ class MoviesController < ApplicationController
       redirect_to("/movies", { :notice => "Movie failed to create successfully." })
   end
 end
+
+
+def update
+
+end
+
+def destroy
+  the_id = params.fetch("path_id")
+
+  matching_movie = Movie.where({:id => the_id})
+
+  the_movie = matching_movie[0]
+  the_movie.destroy
+  redirect_to("/movies")
+end
 end

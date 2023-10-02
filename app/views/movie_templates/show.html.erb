@@ -6,6 +6,69 @@
   Go back
 </a>
 
+<div>
+<a href="/delete_movie/<%= @the_movie.id %>">
+  Delete Movie
+</a>
+</div>
+
+<hr>
+<div>
+<form action="/modify_movie/18" method="post">
+  <div>
+    <label for="title_box">
+      Title
+    </label>
+
+    <input type="text" id="title_box" name="query_title" value="One Flew Over the Cuckoo&#39;s Nest">
+  </div>
+
+  <div>
+    <label for="year_box">
+      Year
+    </label>
+
+    <input type="text" id="year_box" name="query_year" value="1975">
+  </div>
+
+  <div>
+    <label for="duration_box">
+      Duration
+    </label>
+
+    <input type="text" id="duration_box" name="query_duration" value="133">
+  </div>
+
+  <div>
+    <label for="description_box">
+      Description
+    </label>
+
+    <textarea id="description_box" name="query_description" rows="3">While serving time for insanity at a state mental hospital, implacable rabble-rouser, Randle Patrick McMurphy, inspires his fellow patients to rebel against the authoritarian rule of head nurse, Mildred Ratched.</textarea>
+  </div>
+
+  <div>
+    <label for="image_box">
+      Image
+    </label>
+
+    <input type="text" id="image_box" name="query_image" value="https://image.tmdb.org/t/p/w500/biejlC9yx8W66KHrD5tp9YiSqmV.jpg">
+  </div>
+
+  <div>
+    <label for="director_id_box">
+      Director ID
+    </label>
+
+    <input type="text" id="director_id_box" name="query_director_id" value="3974">
+  </div>
+
+  <button>
+    Update movie
+  </button>
+</form>
+</div>
+
 <hr>
 
 <dl>
@@ -54,7 +117,9 @@
     
     <% the_director = matching_directors.at(0) %>
 
-    <%= the_director.name %>
+     <% if the_director %>
+        <%= the_director.name %>
+      <% end %>
   </dd>
 
   <dt>

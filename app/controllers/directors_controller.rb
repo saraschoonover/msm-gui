@@ -51,4 +51,13 @@ class DirectorsController < ApplicationController
       redirect_to("/directors", { :notice => "Director failed to create successfully." })
     end
   end
+
+
+  def update
+
+  end
+  
+  def destroy
+
+  end
 end
